@@ -13,11 +13,19 @@ class AuthService {
   Future<Map<String, dynamic>> loginUser(Map<String, dynamic> map) async {
     try {
       final response = await dio.post(login, data: map);
-      print(response);
       return response.data['data'];
     } on DioException catch (err) {
-      print(err.response);
-      print(err);
+
+
+      throw ApiError.errorCheck(err).errMessage;
+    }
+  }
+
+
+  Future<void> registerUser (Map<String, dynamic> map) async {
+    try {
+      final  response = await dio.post(register, data: map);
+    } on DioException catch (err) {
 
       throw ApiError.errorCheck(err).errMessage;
     }

@@ -1,9 +1,13 @@
+
+import 'package:async_provider/provider/sign_up_provider.dart';
 import 'package:async_provider/shared/validators.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:go_router/go_router.dart';
+
+import '../../commonwidget/toast_show.dart';
 
 class Register extends ConsumerStatefulWidget {
   const Register({super.key});
@@ -16,8 +20,19 @@ class _RegisterState extends ConsumerState<Register> {
   final  _formKey = GlobalKey<FormBuilderState>();
   @override
   Widget build(BuildContext context) {
+    ref.listen(signUpProvider, (prev, next){
+      next.maybeWhen(data: (d){
+        context.pop();
+        showToast(context, 'successfully register');
+      },
+          error: (err, st){
+            showToast(context, '$err');
+          },
+          orElse: ()=> null);
+    });
     final mode = ref.watch(validateModeProvider(id: 2));
     final pass = ref.watch(passShowProvider(id: 2));
+    final signUpState = ref.watch(signUpProvider);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
@@ -31,10 +46,10 @@ class _RegisterState extends ConsumerState<Register> {
           child: ListView(
             children: [
               FormBuilderTextField(
-                name: 'Username',
+                name: 'username',
                 decoration: InputDecoration(
                   // suffixIcon: Icon(Icons.email_outlined),
-                  hintText: 'Enter your Username',
+                  hintText: 'Username',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -80,9 +95,9 @@ class _RegisterState extends ConsumerState<Register> {
                 ),
                 validator: FormBuilderValidators.compose([
                   FormBuilderValidators.required(),
-                  FormBuilderValidators.minLength(8),
-                  FormBuilderValidators.hasUppercaseChars(),
-                  FormBuilderValidators.hasNumericChars()
+                  FormBuilderValidators.minLength(5),
+
+
                 ]),
               ),
               const SizedBox(height: 20),
@@ -104,18 +119,18 @@ class _RegisterState extends ConsumerState<Register> {
                   ),
                   foregroundColor: Colors.white,
                 ),
-                onPressed: () {
+                onPressed: signUpState.isLoading ? null :() {
                   FocusScope.of(context).unfocus();
                   if (_formKey.currentState!.saveAndValidate(focusOnInvalid: false))
                   {
-                    final map = _formKey.currentState;
-                    print(map);
+                    final map = _formKey.currentState!.value;
+                    ref.read(signUpProvider.notifier).registerUser(map);
                   }
                   else{
                     ref.read(validateModeProvider(id:1).notifier).change();
                   }
                 },
-                child: Text('Sign up'),
+                child:signUpState.isLoading ? CircularProgressIndicator(): Text('Sign up'),
               ),
             ],
           ),

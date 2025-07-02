@@ -1,4 +1,5 @@
 
+import 'package:async_provider/commonwidget/toast_show.dart';
 import 'package:async_provider/provider/login_provider.dart';
 import 'package:async_provider/routes/route_enum.dart';
 import 'package:async_provider/shared/validators.dart';
@@ -19,8 +20,20 @@ class _LoginState extends ConsumerState<Login> {
   final  _formKey = GlobalKey<FormBuilderState>();
   @override
   Widget build(BuildContext context) {
+
+    ref.listen(loginProviderProvider, (prev, next){
+      next.maybeWhen(data: (d){
+        showToast(context, 'Successful');
+      },
+      error: (err, st){
+        showToast(context, '$err');
+      },
+          orElse: ()=> null);
+    });
+
     final mode = ref.watch(validateModeProvider(id: 1));
     final pass = ref.watch(passShowProvider(id: 1));
+    final loginState = ref.watch(loginProviderProvider);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
@@ -90,7 +103,7 @@ SizedBox(height: 20,),
                   ),
                   foregroundColor: Colors.white,
                 ),
-                onPressed: () {
+                onPressed: loginState.isLoading? null:() {
                   FocusScope.of(context).unfocus();
                   if (_formKey.currentState!.saveAndValidate(focusOnInvalid: false))
                   {
@@ -101,7 +114,7 @@ SizedBox(height: 20,),
                     ref.read(validateModeProvider(id:1).notifier).change();
                   }
                 },
-                child: Text('Login'),
+                child: loginState.isLoading ? CircularProgressIndicator(): Text('Login'),
               ),
             ],
           ),

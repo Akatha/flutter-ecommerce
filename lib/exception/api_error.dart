@@ -33,6 +33,8 @@ class ApiError{
            errMessage = 'File size is too large';
            case 405:
              errMessage = 'Method Not Allowed';
+         case 409:
+           errMessage = 'User already Register';
              case 500:
                errMessage = 'Internal Server Error';
        }
