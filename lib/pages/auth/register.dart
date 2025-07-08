@@ -1,5 +1,5 @@
 
-import 'package:async_provider/provider/sign_up_provider.dart';
+import 'package:async_provider/provider/auth/sign_up_provider.dart';
 import 'package:async_provider/shared/validators.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';

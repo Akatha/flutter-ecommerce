@@ -1,6 +1,6 @@
 
 import 'package:async_provider/commonwidget/toast_show.dart';
-import 'package:async_provider/provider/login_provider.dart';
+import 'package:async_provider/provider/auth/login_provider.dart';
 import 'package:async_provider/routes/route_enum.dart';
 import 'package:async_provider/shared/validators.dart';
 import 'package:flutter/material.dart';
