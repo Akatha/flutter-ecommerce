@@ -3,8 +3,10 @@ import 'dart:convert';
 
 import 'package:async_provider/main.dart';
 import 'package:async_provider/provider/user_state_provider.dart';
-import 'package:async_provider/services/auth_service.dart';
+
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+import '../../services/auth/auth_service.dart';
 
 part 'login_provider.g.dart';
 

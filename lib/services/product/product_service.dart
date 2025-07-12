@@ -1,14 +1,12 @@
-
-
 import 'package:async_provider/constants/apis.dart';
 import 'package:async_provider/exception/api_error.dart';
 import 'package:async_provider/models/product.dart';
 import 'package:async_provider/shared/dio_provider.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'product_service.g.dart';
-
 
 class ProductService {
   final Dio dio;
@@ -23,6 +21,29 @@ class ProductService {
     }
   }
 
+  Future<void> addProduct({
+    required Map<String, dynamic> map,
+    required XFile image,
+  }) async {
+    final formData = FormData.fromMap({
+      ...map,
+      'image': await MultipartFile.fromFile(image.path),
+    });
+    try {
+      await dio.post(products, data: formData);
+    } on DioException catch (err) {
+      throw ApiError.errorCheck(err).errMessage;
+    }
+  }
+
+  Future<void> removeProduct({required String id,}) async {
+
+    try {
+      await dio.delete('$products/$id');
+    } on DioException catch (err) {
+      throw ApiError.errorCheck(err).errMessage;
+    }
+  }
 
 
 }

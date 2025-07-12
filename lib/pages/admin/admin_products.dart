@@ -4,12 +4,31 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../commonwidget/toast_show.dart';
+
 class AdminProducts extends ConsumerWidget {
   const AdminProducts({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final productState = ref.watch(getProductsProvider);
+    final remState = ref.watch(productsStateProvider);
+
+
+    ref.listen(productsStateProvider, (prev, next){
+      next.maybeWhen(
+          data: (d){
+            ref.invalidate(getProductsProvider);
+            context.pop();
+            showToast(context, 'Successfully product removed');
+          },
+          error: (err, st){
+            context.pop();
+            showToast(context, '$err');
+          },
+          orElse:() =>null );
+    });
+
     return Scaffold(
       appBar: AppBar(
         title: Text('ProductList'),
@@ -51,7 +70,7 @@ class AdminProducts extends ConsumerWidget {
                                         context.pop();
                                       }, child: Text('Cancel')),
                                       TextButton(onPressed: (){
-                                        context.pop();
+                                        ref.read(productsStateProvider.notifier).removeProduct(id: product.id);
                                       }, child: Text('Delete'))
                                     ],
                                   );
