@@ -3,7 +3,8 @@ enum AppRoute {
   login,
   register,
   adminPro,
-  productAdd
+  productAdd,
+  productEdit,
 
 
 }

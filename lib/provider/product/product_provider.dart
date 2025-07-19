@@ -24,6 +24,11 @@ class ProductsState extends _$ProductsState {
     state = await AsyncValue.guard(()=> ref.read(productServiceProvider).addProduct(map: map, image: image));
   }
 
+  Future<void> updateProduct({ required Map<String, dynamic> map, XFile? image, required String id }) async{
+    state = const AsyncLoading();
+    state = await AsyncValue.guard(()=> ref.read(productServiceProvider).updateProduct(map: map, image: image, id: id));
+  }
+
   Future<void> removeProduct({required String id, }) async{
     state = const AsyncLoading();
     state = await AsyncValue.guard(()=> ref.read(productServiceProvider).removeProduct(id: id));

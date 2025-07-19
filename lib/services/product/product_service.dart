@@ -36,16 +36,30 @@ class ProductService {
     }
   }
 
-  Future<void> removeProduct({required String id,}) async {
+  Future<void> updateProduct({
+    required Map<String, dynamic> map, XFile? image, required String id,}) async {
+    try {
+      if (image == null) {
+        await dio.patch('$products/$id', data: map);
+      } else {
+        final formData = FormData.fromMap({
+          ...map,
+          'image': await MultipartFile.fromFile(image.path),
+        });
+        await dio.patch('$products/$id', data: formData);
+      }
+    } on DioException catch (err) {
+      throw ApiError.errorCheck(err).errMessage;
+    }
+  }
 
+  Future<void> removeProduct({required String id}) async {
     try {
       await dio.delete('$products/$id');
     } on DioException catch (err) {
       throw ApiError.errorCheck(err).errMessage;
     }
   }
-
-
 }
 
 @riverpod

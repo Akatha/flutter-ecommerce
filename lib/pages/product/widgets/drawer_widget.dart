@@ -17,7 +17,7 @@ class DrawerWidget extends ConsumerWidget {
           if (userState.role == 'admin')ListTile(
             leading: Icon(Icons.list),
             onTap: (){
-              //context.pop();
+              context.pop();
               context.pushNamed(AppRoute.adminPro.name);
             },
             title: Text('Product List'),),
