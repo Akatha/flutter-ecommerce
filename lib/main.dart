@@ -7,6 +7,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import 'models/cart.dart';
+
 part 'main.g.dart';
 
 @riverpod
@@ -14,15 +16,23 @@ Box  box(Ref ref) {
   throw UnimplementedError();
 }
 
+@riverpod
+List<Cart> carts (Ref ref) {
+  return [];
+}
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
+  Hive.registerAdapter(CartAdapter());
   final bx =  await Hive.openBox('box');
+  final cartBx = await Hive.openBox('carts');
 
 
   runApp(ProviderScope(
       overrides: [
         boxProvider.overrideWithValue(bx),
+
       ],
       child: const Home()));
 }

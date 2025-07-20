@@ -6,17 +6,16 @@ part of 'product_service.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$productServiceHash() => r'37982b7c4d733708111ac64d5219107f701765e9';
+String _$productServiceHash() => r'08274b8ee82348ac9a07090c94872f5e556e3022';
 
 /// See also [productService].
 @ProviderFor(productService)
 final productServiceProvider = AutoDisposeProvider<ProductService>.internal(
   productService,
   name: r'productServiceProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product')
-          ? null
-          : _$productServiceHash,
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$productServiceHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );

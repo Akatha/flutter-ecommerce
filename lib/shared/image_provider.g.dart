@@ -12,15 +12,14 @@ String _$imageProviderHash() => r'c3e3bfa6e2273bef30730f6a659e430270d9df71';
 @ProviderFor(ImageProvider)
 final imageProviderProvider =
     AutoDisposeNotifierProvider<ImageProvider, XFile?>.internal(
-      ImageProvider.new,
-      name: r'imageProviderProvider',
-      debugGetCreateSourceHash:
-          const bool.fromEnvironment('dart.vm.product')
-              ? null
-              : _$imageProviderHash,
-      dependencies: null,
-      allTransitiveDependencies: null,
-    );
+  ImageProvider.new,
+  name: r'imageProviderProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$imageProviderHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
 
 typedef _$ImageProvider = AutoDisposeNotifier<XFile?>;
 // ignore_for_file: type=lint

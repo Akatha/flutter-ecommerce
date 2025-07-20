@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,163 +9,332 @@ part of 'product.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+Product _$ProductFromJson(Map<String, dynamic> json) {
+  return _Product.fromJson(json);
+}
 
 /// @nodoc
 mixin _$Product {
-
-@JsonKey(name: '_id') String get id; String get title; String get description; int get price; String get category; String get brand; String get image; String get createdAt; String get updatedAt;
-/// Create a copy of Product
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$ProductCopyWith<Product> get copyWith => _$ProductCopyWithImpl<Product>(this as Product, _$identity);
+  @JsonKey(name: '_id')
+  String get id => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
+  int get price => throw _privateConstructorUsedError;
+  String get category => throw _privateConstructorUsedError;
+  String get brand => throw _privateConstructorUsedError;
+  String get image => throw _privateConstructorUsedError;
+  String get createdAt => throw _privateConstructorUsedError;
+  String get updatedAt => throw _privateConstructorUsedError;
 
   /// Serializes this Product to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Product&&(identical(other.id, id) || other.id == id)&&(identical(other.title, title) || other.title == title)&&(identical(other.description, description) || other.description == description)&&(identical(other.price, price) || other.price == price)&&(identical(other.category, category) || other.category == category)&&(identical(other.brand, brand) || other.brand == brand)&&(identical(other.image, image) || other.image == image)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,id,title,description,price,category,brand,image,createdAt,updatedAt);
-
-@override
-String toString() {
-  return 'Product(id: $id, title: $title, description: $description, price: $price, category: $category, brand: $brand, image: $image, createdAt: $createdAt, updatedAt: $updatedAt)';
-}
-
-
+  /// Create a copy of Product
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $ProductCopyWith<Product> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ProductCopyWith<$Res>  {
-  factory $ProductCopyWith(Product value, $Res Function(Product) _then) = _$ProductCopyWithImpl;
-@useResult
-$Res call({
-@JsonKey(name: '_id') String id, String title, String description, int price, String category, String brand, String image, String createdAt, String updatedAt
-});
-
-
-
-
+abstract class $ProductCopyWith<$Res> {
+  factory $ProductCopyWith(Product value, $Res Function(Product) then) =
+      _$ProductCopyWithImpl<$Res, Product>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: '_id') String id,
+      String title,
+      String description,
+      int price,
+      String category,
+      String brand,
+      String image,
+      String createdAt,
+      String updatedAt});
 }
+
 /// @nodoc
-class _$ProductCopyWithImpl<$Res>
+class _$ProductCopyWithImpl<$Res, $Val extends Product>
     implements $ProductCopyWith<$Res> {
-  _$ProductCopyWithImpl(this._self, this._then);
+  _$ProductCopyWithImpl(this._value, this._then);
 
-  final Product _self;
-  final $Res Function(Product) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of Product
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? title = null,Object? description = null,Object? price = null,Object? category = null,Object? brand = null,Object? image = null,Object? createdAt = null,Object? updatedAt = null,}) {
-  return _then(_self.copyWith(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
-as String,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
-as String,price: null == price ? _self.price : price // ignore: cast_nullable_to_non_nullable
-as int,category: null == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
-as String,brand: null == brand ? _self.brand : brand // ignore: cast_nullable_to_non_nullable
-as String,image: null == image ? _self.image : image // ignore: cast_nullable_to_non_nullable
-as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as String,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  /// Create a copy of Product
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? title = null,
+    Object? description = null,
+    Object? price = null,
+    Object? category = null,
+    Object? brand = null,
+    Object? image = null,
+    Object? createdAt = null,
+    Object? updatedAt = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      price: null == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as int,
+      category: null == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String,
+      brand: null == brand
+          ? _value.brand
+          : brand // ignore: cast_nullable_to_non_nullable
+              as String,
+      image: null == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as String,
+      updatedAt: null == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$ProductImplCopyWith<$Res> implements $ProductCopyWith<$Res> {
+  factory _$$ProductImplCopyWith(
+          _$ProductImpl value, $Res Function(_$ProductImpl) then) =
+      __$$ProductImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: '_id') String id,
+      String title,
+      String description,
+      int price,
+      String category,
+      String brand,
+      String image,
+      String createdAt,
+      String updatedAt});
 }
 
+/// @nodoc
+class __$$ProductImplCopyWithImpl<$Res>
+    extends _$ProductCopyWithImpl<$Res, _$ProductImpl>
+    implements _$$ProductImplCopyWith<$Res> {
+  __$$ProductImplCopyWithImpl(
+      _$ProductImpl _value, $Res Function(_$ProductImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of Product
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? title = null,
+    Object? description = null,
+    Object? price = null,
+    Object? category = null,
+    Object? brand = null,
+    Object? image = null,
+    Object? createdAt = null,
+    Object? updatedAt = null,
+  }) {
+    return _then(_$ProductImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      price: null == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as int,
+      category: null == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String,
+      brand: null == brand
+          ? _value.brand
+          : brand // ignore: cast_nullable_to_non_nullable
+              as String,
+      image: null == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as String,
+      updatedAt: null == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
 
 /// @nodoc
 @JsonSerializable()
+class _$ProductImpl implements _Product {
+  const _$ProductImpl(
+      {@JsonKey(name: '_id') required this.id,
+      this.title = '',
+      this.description = '',
+      this.price = 0,
+      this.category = '',
+      this.brand = '',
+      this.image = '',
+      this.createdAt = '',
+      this.updatedAt = ''});
 
-class _Product implements Product {
-  const _Product({@JsonKey(name: '_id') required this.id, this.title = '', this.description = '', this.price = 0, this.category = '', this.brand = '', this.image = '', this.createdAt = '', this.updatedAt = ''});
-  factory _Product.fromJson(Map<String, dynamic> json) => _$ProductFromJson(json);
+  factory _$ProductImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ProductImplFromJson(json);
 
-@override@JsonKey(name: '_id') final  String id;
-@override@JsonKey() final  String title;
-@override@JsonKey() final  String description;
-@override@JsonKey() final  int price;
-@override@JsonKey() final  String category;
-@override@JsonKey() final  String brand;
-@override@JsonKey() final  String image;
-@override@JsonKey() final  String createdAt;
-@override@JsonKey() final  String updatedAt;
+  @override
+  @JsonKey(name: '_id')
+  final String id;
+  @override
+  @JsonKey()
+  final String title;
+  @override
+  @JsonKey()
+  final String description;
+  @override
+  @JsonKey()
+  final int price;
+  @override
+  @JsonKey()
+  final String category;
+  @override
+  @JsonKey()
+  final String brand;
+  @override
+  @JsonKey()
+  final String image;
+  @override
+  @JsonKey()
+  final String createdAt;
+  @override
+  @JsonKey()
+  final String updatedAt;
 
-/// Create a copy of Product
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$ProductCopyWith<_Product> get copyWith => __$ProductCopyWithImpl<_Product>(this, _$identity);
+  @override
+  String toString() {
+    return 'Product(id: $id, title: $title, description: $description, price: $price, category: $category, brand: $brand, image: $image, createdAt: $createdAt, updatedAt: $updatedAt)';
+  }
 
-@override
-Map<String, dynamic> toJson() {
-  return _$ProductToJson(this, );
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ProductImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.price, price) || other.price == price) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.brand, brand) || other.brand == brand) &&
+            (identical(other.image, image) || other.image == image) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, title, description, price,
+      category, brand, image, createdAt, updatedAt);
+
+  /// Create a copy of Product
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ProductImplCopyWith<_$ProductImpl> get copyWith =>
+      __$$ProductImplCopyWithImpl<_$ProductImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ProductImplToJson(
+      this,
+    );
+  }
 }
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Product&&(identical(other.id, id) || other.id == id)&&(identical(other.title, title) || other.title == title)&&(identical(other.description, description) || other.description == description)&&(identical(other.price, price) || other.price == price)&&(identical(other.category, category) || other.category == category)&&(identical(other.brand, brand) || other.brand == brand)&&(identical(other.image, image) || other.image == image)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
+abstract class _Product implements Product {
+  const factory _Product(
+      {@JsonKey(name: '_id') required final String id,
+      final String title,
+      final String description,
+      final int price,
+      final String category,
+      final String brand,
+      final String image,
+      final String createdAt,
+      final String updatedAt}) = _$ProductImpl;
+
+  factory _Product.fromJson(Map<String, dynamic> json) = _$ProductImpl.fromJson;
+
+  @override
+  @JsonKey(name: '_id')
+  String get id;
+  @override
+  String get title;
+  @override
+  String get description;
+  @override
+  int get price;
+  @override
+  String get category;
+  @override
+  String get brand;
+  @override
+  String get image;
+  @override
+  String get createdAt;
+  @override
+  String get updatedAt;
+
+  /// Create a copy of Product
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ProductImplCopyWith<_$ProductImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,id,title,description,price,category,brand,image,createdAt,updatedAt);
-
-@override
-String toString() {
-  return 'Product(id: $id, title: $title, description: $description, price: $price, category: $category, brand: $brand, image: $image, createdAt: $createdAt, updatedAt: $updatedAt)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$ProductCopyWith<$Res> implements $ProductCopyWith<$Res> {
-  factory _$ProductCopyWith(_Product value, $Res Function(_Product) _then) = __$ProductCopyWithImpl;
-@override @useResult
-$Res call({
-@JsonKey(name: '_id') String id, String title, String description, int price, String category, String brand, String image, String createdAt, String updatedAt
-});
-
-
-
-
-}
-/// @nodoc
-class __$ProductCopyWithImpl<$Res>
-    implements _$ProductCopyWith<$Res> {
-  __$ProductCopyWithImpl(this._self, this._then);
-
-  final _Product _self;
-  final $Res Function(_Product) _then;
-
-/// Create a copy of Product
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? title = null,Object? description = null,Object? price = null,Object? category = null,Object? brand = null,Object? image = null,Object? createdAt = null,Object? updatedAt = null,}) {
-  return _then(_Product(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
-as String,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
-as String,price: null == price ? _self.price : price // ignore: cast_nullable_to_non_nullable
-as int,category: null == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
-as String,brand: null == brand ? _self.brand : brand // ignore: cast_nullable_to_non_nullable
-as String,image: null == image ? _self.image : image // ignore: cast_nullable_to_non_nullable
-as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as String,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
-}
-
-
-}
-
-// dart format on

@@ -32,7 +32,9 @@ class _SystemHash {
 abstract class _$PassShow extends BuildlessAutoDisposeNotifier<bool> {
   late final int id;
 
-  bool build({required int id});
+  bool build({
+    required int id,
+  });
 }
 
 /// See also [PassShow].
@@ -45,13 +47,21 @@ class PassShowFamily extends Family<bool> {
   const PassShowFamily();
 
   /// See also [PassShow].
-  PassShowProvider call({required int id}) {
-    return PassShowProvider(id: id);
+  PassShowProvider call({
+    required int id,
+  }) {
+    return PassShowProvider(
+      id: id,
+    );
   }
 
   @override
-  PassShowProvider getProviderOverride(covariant PassShowProvider provider) {
-    return call(id: provider.id);
+  PassShowProvider getProviderOverride(
+    covariant PassShowProvider provider,
+  ) {
+    return call(
+      id: provider.id,
+    );
   }
 
   static const Iterable<ProviderOrFamily>? _dependencies = null;
@@ -72,19 +82,20 @@ class PassShowFamily extends Family<bool> {
 /// See also [PassShow].
 class PassShowProvider extends AutoDisposeNotifierProviderImpl<PassShow, bool> {
   /// See also [PassShow].
-  PassShowProvider({required int id})
-    : this._internal(
-        () => PassShow()..id = id,
-        from: passShowProvider,
-        name: r'passShowProvider',
-        debugGetCreateSourceHash:
-            const bool.fromEnvironment('dart.vm.product')
-                ? null
-                : _$passShowHash,
-        dependencies: PassShowFamily._dependencies,
-        allTransitiveDependencies: PassShowFamily._allTransitiveDependencies,
-        id: id,
-      );
+  PassShowProvider({
+    required int id,
+  }) : this._internal(
+          () => PassShow()..id = id,
+          from: passShowProvider,
+          name: r'passShowProvider',
+          debugGetCreateSourceHash:
+              const bool.fromEnvironment('dart.vm.product')
+                  ? null
+                  : _$passShowHash,
+          dependencies: PassShowFamily._dependencies,
+          allTransitiveDependencies: PassShowFamily._allTransitiveDependencies,
+          id: id,
+        );
 
   PassShowProvider._internal(
     super._createNotifier, {
@@ -99,8 +110,12 @@ class PassShowProvider extends AutoDisposeNotifierProviderImpl<PassShow, bool> {
   final int id;
 
   @override
-  bool runNotifierBuild(covariant PassShow notifier) {
-    return notifier.build(id: id);
+  bool runNotifierBuild(
+    covariant PassShow notifier,
+  ) {
+    return notifier.build(
+      id: id,
+    );
   }
 
   @override
@@ -160,7 +175,9 @@ abstract class _$validateMode
     extends BuildlessAutoDisposeNotifier<AutovalidateMode> {
   late final int id;
 
-  AutovalidateMode build({required int id});
+  AutovalidateMode build({
+    required int id,
+  });
 }
 
 /// See also [validateMode].
@@ -173,15 +190,21 @@ class ValidateModeFamily extends Family<AutovalidateMode> {
   const ValidateModeFamily();
 
   /// See also [validateMode].
-  ValidateModeProvider call({required int id}) {
-    return ValidateModeProvider(id: id);
+  ValidateModeProvider call({
+    required int id,
+  }) {
+    return ValidateModeProvider(
+      id: id,
+    );
   }
 
   @override
   ValidateModeProvider getProviderOverride(
     covariant ValidateModeProvider provider,
   ) {
-    return call(id: provider.id);
+    return call(
+      id: provider.id,
+    );
   }
 
   static const Iterable<ProviderOrFamily>? _dependencies = null;
@@ -203,20 +226,21 @@ class ValidateModeFamily extends Family<AutovalidateMode> {
 class ValidateModeProvider
     extends AutoDisposeNotifierProviderImpl<validateMode, AutovalidateMode> {
   /// See also [validateMode].
-  ValidateModeProvider({required int id})
-    : this._internal(
-        () => validateMode()..id = id,
-        from: validateModeProvider,
-        name: r'validateModeProvider',
-        debugGetCreateSourceHash:
-            const bool.fromEnvironment('dart.vm.product')
-                ? null
-                : _$validateModeHash,
-        dependencies: ValidateModeFamily._dependencies,
-        allTransitiveDependencies:
-            ValidateModeFamily._allTransitiveDependencies,
-        id: id,
-      );
+  ValidateModeProvider({
+    required int id,
+  }) : this._internal(
+          () => validateMode()..id = id,
+          from: validateModeProvider,
+          name: r'validateModeProvider',
+          debugGetCreateSourceHash:
+              const bool.fromEnvironment('dart.vm.product')
+                  ? null
+                  : _$validateModeHash,
+          dependencies: ValidateModeFamily._dependencies,
+          allTransitiveDependencies:
+              ValidateModeFamily._allTransitiveDependencies,
+          id: id,
+        );
 
   ValidateModeProvider._internal(
     super._createNotifier, {
@@ -231,8 +255,12 @@ class ValidateModeProvider
   final int id;
 
   @override
-  AutovalidateMode runNotifierBuild(covariant validateMode notifier) {
-    return notifier.build(id: id);
+  AutovalidateMode runNotifierBuild(
+    covariant validateMode notifier,
+  ) {
+    return notifier.build(
+      id: id,
+    );
   }
 
   @override
@@ -253,7 +281,7 @@ class ValidateModeProvider
 
   @override
   AutoDisposeNotifierProviderElement<validateMode, AutovalidateMode>
-  createElement() {
+      createElement() {
     return _ValidateModeProviderElement(this);
   }
 
@@ -286,6 +314,5 @@ class _ValidateModeProviderElement
   @override
   int get id => (origin as ValidateModeProvider).id;
 }
-
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
