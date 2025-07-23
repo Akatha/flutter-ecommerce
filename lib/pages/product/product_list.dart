@@ -2,9 +2,11 @@ import 'package:async_provider/constants/apis.dart';
 import 'package:async_provider/pages/product/widgets/drawer_widget.dart';
 import 'package:async_provider/provider/product/product_provider.dart';
 import 'package:async_provider/provider/user_state_provider.dart';
+import 'package:async_provider/routes/route_enum.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 
 class ProductList extends ConsumerWidget {
@@ -36,30 +38,35 @@ class ProductList extends ConsumerWidget {
                         await Future.delayed(Duration(seconds: 1));
                         ref.invalidate(getProductsProvider);
                       },
-                      child: GridTile(
-                        footer: Container(
-                          padding: EdgeInsets.only(left: 10),
-                          height: 60,
-                          color: Colors.black.withOpacity(0.6),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Expanded(child: Text(product.title,
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                                style: TextStyle(color: Colors.white),)),
-                              Expanded(child: Text(
-                                maxLines: 1,
-                                'Price:${product.price}',style: TextStyle(color: Colors.white),)),
-                            ],
+                      child: InkWell(
+                        onTap: (){
+                          context.pushNamed(AppRoute.productDetail.name, extra: product.id);
+                        },
+                        child: GridTile(
+                          footer: Container(
+                            padding: EdgeInsets.only(left: 10),
+                            height: 60,
+                            color: Colors.black.withOpacity(0.6),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Expanded(child: Text(product.title,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(color: Colors.white),)),
+                                Expanded(child: Text(
+                                  maxLines: 1,
+                                  'Price:${product.price}',style: TextStyle(color: Colors.white),)),
+                              ],
+                            ),
                           ),
-                        ),
-                        child: CachedNetworkImage(
-                        fit: BoxFit.fitWidth,
-                        errorWidget: (c,s,d) => Image.asset('assets/images/dummy.jpg'),
-                        imageUrl: '$base/${product.image}'),
+                          child: CachedNetworkImage(
+                          fit: BoxFit.fitWidth,
+                          errorWidget: (c,s,d) => Image.asset('assets/images/dummy.jpg'),
+                          imageUrl: '$base/${product.image}'),
 
+                        ),
                       ),
                     );
                   }),
