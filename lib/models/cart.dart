@@ -3,6 +3,7 @@ part 'cart.g.dart';
 
 
 
+
 @HiveType(typeId: 0)
 class Cart extends HiveObject {
 

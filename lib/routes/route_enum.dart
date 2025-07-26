@@ -6,6 +6,7 @@ enum AppRoute {
   productAdd,
   productEdit,
   productDetail,
+  cart,
 
 
 }

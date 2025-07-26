@@ -17,8 +17,15 @@ class ProductList extends ConsumerWidget {
     final producState = ref.watch(getProductsProvider);
     return Scaffold(
       appBar: AppBar(
+
         backgroundColor: Colors.blue,
-        title: Center(child: Text('ProductPage'),),),
+        title: Center(child: Text('ProductPage'),),
+        actions: [
+          IconButton(onPressed: (){
+            context.pushNamed(AppRoute.cart.name);
+          }, icon: Icon(Icons.shopping_cart)),
+        ],
+      ),
       drawer: DrawerWidget(),
       body:producState.when(
         skipLoadingOnRefresh: false,

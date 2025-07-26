@@ -1,9 +1,21 @@
 import 'package:async_provider/constants/apis.dart';
-import 'package:async_provider/provider/cart/cart_provider.dart';
+import 'package:async_provider/models/cart.dart';
+
+
 import 'package:async_provider/provider/product/product_provider.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hive/hive.dart';
+
+
+import '../../provider/cart/cart_provider.dart';
+
+
+
+
+
+
 
 class ProductDetail extends ConsumerWidget {
   final String id;
@@ -11,6 +23,8 @@ class ProductDetail extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+
+    // final cart = ref.watch(cartListProvider);
     final state = ref.watch(getProductProvider(id: id));
     return Scaffold(
       appBar: AppBar(),
@@ -28,7 +42,10 @@ class ProductDetail extends ConsumerWidget {
                  Text(data.category),
                  const SizedBox(height: 20,),
                  ElevatedButton(onPressed: (){
-                   ref.read(cartListProvider.notifier).setCart(data);
+                   // Hive.box<Cart>('carts').clear();
+                   //  print(cart[0].qty);
+
+                    ref.read(cartListProvider.notifier).setCart(data);
                  }, child: Text('Add To cart')),
                ],
              ),

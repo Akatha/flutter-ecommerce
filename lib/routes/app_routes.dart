@@ -4,6 +4,7 @@ import 'package:async_provider/pages/admin/admin_products.dart';
 import 'package:async_provider/pages/admin/product_add_form.dart';
 import 'package:async_provider/pages/auth/login.dart';
 import 'package:async_provider/pages/auth/register.dart';
+import 'package:async_provider/pages/cart/cart_page.dart';
 
 import 'package:async_provider/pages/product/product_list.dart';
 import 'package:async_provider/provider/user_state_provider.dart';
@@ -50,6 +51,14 @@ GoRouter router(Ref ref) {
                 builder: (context, state) {
                   final product = state.extra as Product;
                   return ProductEditForm(product: product);
+                },
+              ),
+
+              GoRoute(
+                path: 'cart',
+                name: AppRoute.cart.name,
+                builder: (context, state) {
+                  return const CartPage();
                 },
               ),
 
