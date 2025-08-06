@@ -114,6 +114,7 @@ SizedBox(height: 20,),
                     ref.read(validateModeProvider(id:1).notifier).change();
                   }
                 },
+
                 child: loginState.isLoading ? CircularProgressIndicator(): Text('Login'),
               ),
             ],
